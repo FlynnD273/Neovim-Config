@@ -1,0 +1,4 @@
+require("renamer").setup()
+
+-- vim.keymap.set('i', '<F2>', '<cmd>lua require("renamer").rename()<cr>')
+-- vim.keymap.set({ 'n', 'v' }, '<leader>rn', '<cmd>lua require("renamer").rename()<cr>')
