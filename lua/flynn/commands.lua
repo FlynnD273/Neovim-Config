@@ -4,3 +4,7 @@ local script_dir = debug.getinfo(1, "S").source:sub(2):match("(.*/)")
 vim.cmd(string.format([[
    autocmd BufNewFile *.sh silent! 0r %s/../../templates/bash.sh
 ]], script_dir))
+
+vim.cmd([[
+	autocmd BufWritePost *.tex !pdflatex <afile>
+]])
