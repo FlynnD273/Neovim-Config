@@ -116,7 +116,7 @@ cmp.setup.cmdline(':', {
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('lspconfig').lua_ls.setup {
+require('lspconfig').lua_ls.setup { -- https://luals.github.io/#neovim-install
 	capabilities = capabilities,
 	cmd = { "lua-language-server" },
 	settings = {
@@ -136,7 +136,7 @@ require('lspconfig').lua_ls.setup {
 		},
 	},
 }
-require('lspconfig').csharp_ls.setup {
+require('lspconfig').csharp_ls.setup { -- dotnet tool install --global csharp-ls
 	capabilities = capabilities,
 	root_dir = function(startpath)
 		local lspconfig = require('lspconfig')
@@ -146,9 +146,11 @@ require('lspconfig').csharp_ls.setup {
 				or lspconfig.util.root_pattern(".git")(startpath)
 	end,
 }
-require('lspconfig').pyright.setup { capabilities = capabilities }
-require('lspconfig').gdscript.setup { capabilities = capabilities }
-require('lspconfig').html.setup { capabilities = capabilities }
-require('lspconfig').rust_analyzer.setup { capabilities = capabilities }
-require('lspconfig').tsserver.setup { capabilities = capabilities }
-require'lspconfig'.ccls.setup { capabilities = capabilities }
+require('lspconfig').pyright.setup { capabilities = capabilities } -- npm i -g pyright
+require('lspconfig').gdscript.setup { capabilities = capabilities } -- comes with Godot
+require('lspconfig').html.setup { capabilities = capabilities } -- npm i -g vscode-langservers-extracted
+require('lspconfig').rust_analyzer.setup { capabilities = capabilities } -- rustup component add rust-analyzer
+require('lspconfig').tsserver.setup { capabilities = capabilities } -- npm i -g typescript-language-server typescript
+require'lspconfig'.ccls.setup { capabilities = capabilities } -- https://github.com/MaskRay/ccls/wiki
+require'lspconfig'.texlab.setup { capabilities = capabilities } -- cargo install texlab
+require'lspconfig'.bashls.setup { capabilities = capabilities } -- npm i -g bash-language-server
