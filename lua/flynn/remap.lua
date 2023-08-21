@@ -11,8 +11,8 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("i", "<S-Tab>", "<C-d>")
 vim.keymap.set("n", "ca", 'gg0VG"+y')
 
-vim.keymap.set("n", "H", "^")
-vim.keymap.set("n", "L", "$")
+vim.keymap.set({ "v", "n" }, "H", "^")
+vim.keymap.set({ "v", "n" }, "L", "$")
 
 vim.keymap.set("n", "<leader>fh", vim.cmd.foldclose)
 vim.keymap.set("n", "<leader>fl", vim.cmd.foldopen)
