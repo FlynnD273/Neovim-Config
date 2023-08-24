@@ -1,5 +1,5 @@
 require("obsidian").setup({
-	dir = "C:\\Users\\Flynn/Documents/Notes",
+	dir = "/home/flynn/Documents/Notes",
 
 	prepend_note_id = false,
 
