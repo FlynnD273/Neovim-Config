@@ -10,7 +10,7 @@ vim.g.moonflyCUndercurls = false
 vim.g.moonflyVirtualTextColor = true
 vim.cmd.colorscheme("moonfly")
 
-vim.opt.undodir = "~\\Appdata\\Local\\.vim\\undo"
+vim.opt.undodir = "C:\\Users\\Flynn\\Appdata\\Local\\.vim\\undo"
 vim.opt.undofile = true
 
 -- vim.opt.foldmethod = "expr"
