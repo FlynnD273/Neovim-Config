@@ -85,6 +85,7 @@ return require('packer').startup(function(use)
 		'vladdoster/remember.nvim',
 		config = [[ require('remember') ]],
 	}
+<<<<<<< HEAD
 	use {
 		'numToStr/Navigator.nvim',
 		config = function()
@@ -92,12 +93,19 @@ return require('packer').startup(function(use)
 		end
 	}
 	use { 'epwalsh/obsidian.nvim', branch = 'main', }
+=======
+	use 'christoomey/vim-tmux-navigator'
+	use { 'FlynnD273/obsidian.nvim', branch = 'main', }
+>>>>>>> 5f3861e (Refactor config)
 	use {
 		'folke/trouble.nvim',
 		requires = 'nvim-tree/nvim-web-devicons',
 	}
 	use 'smjonas/live-command.nvim'
+<<<<<<< HEAD
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+=======
+>>>>>>> 5f3861e (Refactor config)
 	-- }}}
 
 	use 'lervag/vimtex'
