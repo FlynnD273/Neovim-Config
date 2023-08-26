@@ -1,3 +1,4 @@
+-- vim:foldmethod=marker
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -15,40 +16,42 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+	-- UI {{{
   use { 'FlynnD273/vim-moonfly-colors', as = 'moonfly', }
-  use 'tpope/vim-commentary'
 	use 'lukas-reineke/indent-blankline.nvim'
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons' }
 	}
+	use 'xiyaowong/transparent.nvim'
+
+	-- }}}
+
+	-- Telescope and co. {{{
   use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-  }
-  use 'nvim-treesitter/nvim-treesitter-context'
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.x',
+    'nvim-telescope/telescope.nvim', branch = '0.1.x',
     requires = 'nvim-lua/plenary.nvim',
   }
-	use {
-		'j-hui/fidget.nvim',
-		tag = "legacy",
-	}
 	use {
 		'nvim-telescope/telescope-fzf-native.nvim',
 		run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
 	}
   use 'BurntSushi/ripgrep'
   use 'sharkdp/fd'
-  use 'ThePrimeagen/harpoon'
-  use 'mbbill/undotree'
-  use 'tpope/vim-fugitive'
-  use { 
-		'vladdoster/remember.nvim',
-		config = [[ require('remember') ]],
-	}
 
+	-- }}}
+
+	-- Coding {{{
+  use 'tpope/vim-commentary'
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+  }
+  use 'nvim-treesitter/nvim-treesitter-context'
+	use {
+		'j-hui/fidget.nvim',
+		tag = "legacy",
+	}
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
@@ -62,20 +65,31 @@ return require('packer').startup(function(use)
 		branch = 'master',
 		requires = 'nvim-lua/plenary.nvim',
 	}
+	use 'theHamsta/nvim-dap-virtual-text'
+	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+	use_rocks 'luafilesystem'
 	-- use 'github/copilot.vim'
-	use 'Hoffs/omnisharp-extended-lsp.nvim'
+
+	-- }}}
+
+	-- Convenience {{{
+  use 'ThePrimeagen/harpoon'
+  use 'mbbill/undotree'
+  use 'tpope/vim-fugitive'
+  use {
+		'vladdoster/remember.nvim',
+		config = [[ require('remember') ]],
+	}
 	use 'christoomey/vim-tmux-navigator'
-	use 'xiyaowong/transparent.nvim'
 	use { 'FlynnD273/obsidian.nvim', branch = 'main', }
 	use {
 		'folke/trouble.nvim',
 		requires = 'nvim-tree/nvim-web-devicons',
 	}
-	use 'theHamsta/nvim-dap-virtual-text'
 	use 'smjonas/live-command.nvim'
-	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-	use_rocks 'luafilesystem'
+	-- }}}
 
+	use 'lervag/vimtex'
 	-- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
