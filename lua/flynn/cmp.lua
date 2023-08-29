@@ -131,6 +131,6 @@ require('lspconfig').gdscript.setup { capabilities = capabilities } -- comes wit
 require('lspconfig').html.setup { capabilities = capabilities } -- npm i -g vscode-langservers-extracted
 require('lspconfig').rust_analyzer.setup { capabilities = capabilities } -- rustup component add rust-analyzer
 require('lspconfig').tsserver.setup { capabilities = capabilities } -- npm i -g typescript-language-server typescript
-require'lspconfig'.ccls.setup { capabilities = capabilities } -- https://github.com/MaskRay/ccls/wiki
+require'lspconfig'.ccls.setup { capabilities = capabilities } -- https://github.com/MaskRay/ccls/wiki OR sudo apt install ccls
 require'lspconfig'.texlab.setup { capabilities = capabilities } -- cargo install texlab
 require'lspconfig'.bashls.setup { capabilities = capabilities } -- npm i -g bash-language-server
