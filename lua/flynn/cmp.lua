@@ -134,3 +134,4 @@ require('lspconfig').tsserver.setup { capabilities = capabilities } -- npm i -g 
 require'lspconfig'.ccls.setup { capabilities = capabilities } -- https://github.com/MaskRay/ccls/wiki OR sudo apt install ccls
 require'lspconfig'.texlab.setup { capabilities = capabilities } -- cargo install texlab
 require'lspconfig'.bashls.setup { capabilities = capabilities } -- npm i -g bash-language-server
+require'lspconfig'.sqlls.setup { capabilities = capabilities } -- npm i -g sql-language-server
