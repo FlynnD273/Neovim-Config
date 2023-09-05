@@ -19,3 +19,6 @@ vim.keymap.set("n", "<leader>fl", vim.cmd.foldopen)
 
 vim.keymap.set("n", "<C-w>o", ":tabe %<CR>")
 vim.keymap.set("n", "<C-w>i", ":q<CR>")
+
+vim.keymap.set({ "n", "v" }, ")", "")
+vim.keymap.set({ "n", "v" }, "(", "")
