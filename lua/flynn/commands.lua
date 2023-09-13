@@ -31,7 +31,6 @@ function Compile_tex()
 	end
 
 	local cmd =  'pdflatex -interaction=nonstopmode "' .. tex_file .. '"' .. ' -output-directory="' .. dir .. '"'
-	print(cmd)
 	local exit_code, stdout, stderr = Execute_command(cmd)
 
 	if exit_code ~= 0 then
