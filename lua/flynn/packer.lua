@@ -50,7 +50,12 @@ return require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter-context'
 	use {
 		'j-hui/fidget.nvim',
-		tag = "legacy",
+		tag = 'legacy',
+		config = function()
+			require("fidget").setup {
+				-- options
+			}
+		end,
 	}
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
