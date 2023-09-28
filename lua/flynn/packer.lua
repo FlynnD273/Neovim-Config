@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
 		'nvim-lualine/lualine.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons' }
 	}
-	use 'xiyaowong/transparent.nvim'
+	-- use 'xiyaowong/transparent.nvim'
 
 	-- }}}
 
