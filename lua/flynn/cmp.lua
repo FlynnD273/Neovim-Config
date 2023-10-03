@@ -135,3 +135,5 @@ require'lspconfig'.ccls.setup { capabilities = capabilities } -- https://github.
 require'lspconfig'.texlab.setup { capabilities = capabilities } -- cargo install texlab
 require'lspconfig'.bashls.setup { capabilities = capabilities } -- npm i -g bash-language-server
 require'lspconfig'.sqlls.setup { capabilities = capabilities } -- npm i -g sql-language-server
+require'lspconfig'.marksman.setup { capabilities = capabilities } -- https://github.com/artempyanykh/marksman/releases
+require'lspconfig'.java_language_server.setup { capabilities = capabilities } -- https://github.com/georgewfraser/java-language-server
