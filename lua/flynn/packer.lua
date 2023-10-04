@@ -85,7 +85,12 @@ return require('packer').startup(function(use)
 		'vladdoster/remember.nvim',
 		config = [[ require('remember') ]],
 	}
-	use 'christoomey/vim-tmux-navigator'
+	use {
+		'numToStr/Navigator.nvim',
+		config = function()
+			require('Navigator').setup()
+		end
+	}
 	use { 'FlynnD273/obsidian.nvim', branch = 'main', }
 	use {
 		'folke/trouble.nvim',
