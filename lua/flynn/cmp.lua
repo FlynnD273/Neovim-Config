@@ -135,4 +135,7 @@ require'lspconfig'.ccls.setup { capabilities = capabilities } -- https://github.
 require'lspconfig'.texlab.setup { capabilities = capabilities } -- cargo install texlab
 require'lspconfig'.bashls.setup { capabilities = capabilities } -- npm i -g bash-language-server
 require'lspconfig'.sqlls.setup { capabilities = capabilities } -- npm i -g sql-language-server
-require'lspconfig'.java_language_server.setup { capabilities = capabilities } -- https://github.com/georgewfraser/java-language-server
+require'lspconfig'.java_language_server.setup { -- https://github.com/georgewfraser/java-language-server
+	capabilities = capabilities,
+	cmd = { "bash", "/home/flynn/Documents/misc-git/java-language-server/dist/lang_server_linux.sh" },
+}
