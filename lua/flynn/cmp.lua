@@ -94,49 +94,49 @@ cmp.setup.cmdline(':', {
 -- )
 
 -- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('lspconfig').lua_ls.setup { -- https://luals.github.io/#neovim-install
-	capabilities = capabilities,
-	cmd = { "lua-language-server" },
-	settings = {
-		Lua = {
-			diagnostics = {
-				-- Get the language server to recognize the `vim` global
-				globals = {'vim', 'require', 'use_rocks' },
-			},
-			workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      telemetry = {
-				-- Do not send telemetry data containing a randomized but unique identifier
-        enable = false,
-      },
-		},
-	},
-}
-require('lspconfig').csharp_ls.setup { -- dotnet tool install --global csharp-ls
-	capabilities = capabilities,
-	root_dir = function(startpath)
-		local lspconfig = require('lspconfig')
-		return lspconfig.util.root_pattern("*.sln")(startpath)
-				or lspconfig.util.root_pattern("*.csproj")(startpath)
-				or lspconfig.util.root_pattern("*.fsproj")(startpath)
-				or lspconfig.util.root_pattern(".git")(startpath)
-	end,
-}
-require('lspconfig').pyright.setup { capabilities = capabilities } -- npm i -g pyright
-require('lspconfig').gdscript.setup { capabilities = capabilities } -- comes with Godot
-require('lspconfig').html.setup { capabilities = capabilities } -- npm i -g vscode-langservers-extracted
-require('lspconfig').rust_analyzer.setup { capabilities = capabilities } -- rustup component add rust-analyzer
-require('lspconfig').tsserver.setup { capabilities = capabilities } -- npm i -g typescript-language-server typescript
-require'lspconfig'.ccls.setup { capabilities = capabilities } -- https://github.com/MaskRay/ccls/wiki OR sudo apt install ccls
-require'lspconfig'.texlab.setup { capabilities = capabilities } -- cargo install texlab
-require'lspconfig'.bashls.setup { capabilities = capabilities } -- npm i -g bash-language-server
-require'lspconfig'.sqlls.setup { capabilities = capabilities } -- npm i -g sql-language-server
-require'lspconfig'.java_language_server.setup { -- https://github.com/georgewfraser/java-language-server
-	capabilities = capabilities,
-	cmd = { "bash", "/home/flynn/Documents/misc-git/java-language-server/dist/lang_server_linux.sh" },
-}
-require'lspconfig'.cssls.setup { capabilities = capabilities } -- npm i -g vscode-langservers-extracted
+-- require('lspconfig').lua_ls.setup { -- https://luals.github.io/#neovim-install
+-- 	capabilities = capabilities,
+-- 	cmd = { "lua-language-server" },
+-- 	settings = {
+-- 		Lua = {
+-- 			diagnostics = {
+-- 				-- Get the language server to recognize the `vim` global
+-- 				globals = {'vim', 'require', 'use_rocks' },
+-- 			},
+-- 			workspace = {
+--         -- Make the server aware of Neovim runtime files
+--         library = vim.api.nvim_get_runtime_file("", true),
+--       },
+--       telemetry = {
+-- 				-- Do not send telemetry data containing a randomized but unique identifier
+--         enable = false,
+--       },
+-- 		},
+-- 	},
+-- }
+-- require('lspconfig').csharp_ls.setup { -- dotnet tool install --global csharp-ls
+-- 	capabilities = capabilities,
+-- 	root_dir = function(startpath)
+-- 		local lspconfig = require('lspconfig')
+-- 		return lspconfig.util.root_pattern("*.sln")(startpath)
+-- 				or lspconfig.util.root_pattern("*.csproj")(startpath)
+-- 				or lspconfig.util.root_pattern("*.fsproj")(startpath)
+-- 				or lspconfig.util.root_pattern(".git")(startpath)
+-- 	end,
+-- }
+-- require('lspconfig').pyright.setup { capabilities = capabilities } -- npm i -g pyright
+-- require('lspconfig').gdscript.setup { capabilities = capabilities } -- comes with Godot
+-- require('lspconfig').html.setup { capabilities = capabilities } -- npm i -g vscode-langservers-extracted
+-- require('lspconfig').rust_analyzer.setup { capabilities = capabilities } -- rustup component add rust-analyzer
+-- require('lspconfig').tsserver.setup { capabilities = capabilities } -- npm i -g typescript-language-server typescript
+-- require'lspconfig'.ccls.setup { capabilities = capabilities } -- https://github.com/MaskRay/ccls/wiki OR sudo apt install ccls
+-- require'lspconfig'.texlab.setup { capabilities = capabilities } -- cargo install texlab
+-- require'lspconfig'.bashls.setup { capabilities = capabilities } -- npm i -g bash-language-server
+-- require'lspconfig'.sqlls.setup { capabilities = capabilities } -- npm i -g sql-language-server
+-- require'lspconfig'.java_language_server.setup { -- https://github.com/georgewfraser/java-language-server
+-- 	capabilities = capabilities,
+-- 	cmd = { "bash", "/home/flynn/Documents/misc-git/java-language-server/dist/lang_server_linux.sh" },
+-- }
+-- require'lspconfig'.cssls.setup { capabilities = capabilities } -- npm i -g vscode-langservers-extracted
