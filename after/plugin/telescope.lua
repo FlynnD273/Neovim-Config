@@ -5,5 +5,5 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [f]iles]'
 vim.keymap.set('n', '<leader>fp', builtin.git_files, { desc = '[F]ind git [p]roject files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind [g]rep' })
 vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
