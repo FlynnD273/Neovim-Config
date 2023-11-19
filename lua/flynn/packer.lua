@@ -91,7 +91,7 @@ return require('packer').startup(function(use)
 			require('Navigator').setup()
 		end
 	}
-	use { 'FlynnD273/obsidian.nvim', branch = 'main', }
+	use { 'epwalsh/obsidian.nvim', branch = 'main', }
 	use {
 		'folke/trouble.nvim',
 		requires = 'nvim-tree/nvim-web-devicons',
