@@ -140,6 +140,3 @@ require'lspconfig'.java_language_server.setup { -- https://github.com/georgewfra
 	cmd = { "bash", "/home/flynn/Documents/misc-git/java-language-server/dist/lang_server_linux.sh" },
 }
 require'lspconfig'.cssls.setup { capabilities = capabilities } -- npm i -g vscode-langservers-extracted
-require'lspconfig'.powershell_es.setup { -- https://github.com/PowerShell/PowerShellEditorServices/releases
-  bundle_path = [[C:\Users\Flynn\PowerShellEditorServices]],
-}
