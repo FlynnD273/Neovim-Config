@@ -13,9 +13,9 @@ vim.cmd.colorscheme("moonfly")
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undo"
 vim.opt.undofile = true
 
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldlevel = 5
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldlevel = 5
 
 vim.opt.scrolloff = 5
 -- vim.cmd("set foldenable")
