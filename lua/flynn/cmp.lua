@@ -134,9 +134,12 @@ require('lspconfig').tsserver.setup { capabilities = capabilities } -- npm i -g 
 require'lspconfig'.ccls.setup { capabilities = capabilities } -- https://github.com/MaskRay/ccls/wiki OR sudo apt install ccls
 require'lspconfig'.texlab.setup { capabilities = capabilities } -- cargo install texlab
 require'lspconfig'.bashls.setup { capabilities = capabilities } -- npm i -g bash-language-server
+require'lspconfig'.powershell_es.setup { -- https://github.com/PowerShell/PowerShellEditorServices/releases
+  bundle_path = [[C:\Users\Flynn\PowerShellEditorServices]],
+}
 require'lspconfig'.sqlls.setup { capabilities = capabilities } -- npm i -g sql-language-server
 require'lspconfig'.java_language_server.setup { -- https://github.com/georgewfraser/java-language-server
 	capabilities = capabilities,
-	cmd = { "bash", "/home/flynn/Documents/misc-git/java-language-server/dist/lang_server_linux.sh" },
+	cmd = { "powershell", [[D:/repos/java-language-server/dist/lang_server_windows.cmd]] },
 }
 require'lspconfig'.cssls.setup { capabilities = capabilities } -- npm i -g vscode-langservers-extracted
