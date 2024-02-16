@@ -3,6 +3,7 @@ vim.opt.shiftwidth = 0
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.linebreak = true
+vim.opt.breakindent = true
 
 vim.g.moonflyItalics = false
 vim.g.moonflyCursorColor = false
