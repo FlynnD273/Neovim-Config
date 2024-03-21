@@ -42,6 +42,7 @@ return require('packer').startup(function(use)
 	-- }}}
 
 	-- Coding {{{
+	use 'mfussenegger/nvim-jdtls'
   use 'tpope/vim-commentary'
   use {
     'nvim-treesitter/nvim-treesitter',
