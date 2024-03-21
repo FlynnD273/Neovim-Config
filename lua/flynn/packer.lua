@@ -72,7 +72,7 @@ return require('packer').startup(function(use)
 		requires = 'nvim-lua/plenary.nvim',
 	}
 	use 'theHamsta/nvim-dap-virtual-text'
-	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
 	use_rocks 'luafilesystem'
 	-- use 'github/copilot.vim'
 
