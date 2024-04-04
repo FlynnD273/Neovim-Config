@@ -11,7 +11,7 @@ vim.g.moonflyCUndercurls = false
 vim.g.moonflyVirtualTextColor = true
 vim.cmd.colorscheme("moonfly")
 
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undo"
+vim.opt.undodir = io.popen("cd"):read() .. "/.vim/undo"
 vim.opt.undofile = true
 
 -- vim.opt.foldmethod = "expr"
