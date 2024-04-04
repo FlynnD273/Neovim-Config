@@ -4,6 +4,7 @@ vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
+vim.opt.expandtab = true
 
 vim.g.moonflyItalics = false
 vim.g.moonflyCursorColor = false
@@ -11,7 +12,7 @@ vim.g.moonflyCUndercurls = false
 vim.g.moonflyVirtualTextColor = true
 vim.cmd.colorscheme("moonfly")
 
-home = io.popen("cd"):read()
+local home = io.popen("cd"):read()
 if home == nil then
 	home = os.getenv("HOME")
 end
