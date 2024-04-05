@@ -12,7 +12,7 @@ vim.g.moonflyCUndercurls = false
 vim.g.moonflyVirtualTextColor = true
 vim.cmd.colorscheme("moonfly")
 
-local home = io.popen("cd"):read()
+local home = vim.env.HOME
 if home == nil then
 	home = os.getenv("HOME")
 end
