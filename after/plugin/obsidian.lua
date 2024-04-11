@@ -141,5 +141,4 @@ vim.keymap.set("n", "gf", function()
 end, { noremap = false, expr = true })
 
 vim.keymap.set("n", "<leader>fo", "<cmd>ObsidianQuickSwitch<CR>")
-vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianToday<CR>")
-vim.keymap.set("n", "<leader>oy", "<cmd>ObsidianYesterday<CR>")
+vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianToday<CR>")
