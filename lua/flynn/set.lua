@@ -4,6 +4,7 @@ vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
+vim.opt.expandtab = true
 
 vim.g.moonflyItalics = false
 vim.g.moonflyCursorColor = false
@@ -11,7 +12,11 @@ vim.g.moonflyCUndercurls = false
 vim.g.moonflyVirtualTextColor = true
 vim.cmd.colorscheme("moonfly")
 
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undo"
+local home = vim.env.HOME
+if home == nil then
+	home = os.getenv("HOME")
+end
+vim.opt.undodir = home .. "/.vim/undo"
 vim.opt.undofile = true
 
 -- vim.opt.foldmethod = "expr"
