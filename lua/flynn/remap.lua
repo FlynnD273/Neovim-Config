@@ -23,5 +23,5 @@ vim.keymap.set("n", "<C-w>i", ":q<CR>")
 vim.keymap.set({ "n", "v" }, ")", "")
 vim.keymap.set({ "n", "v" }, "(", "")
 
-vim.keymap.set("n", "<leader>j", ":cnext<CR>")
-vim.keymap.set("n", "<leader>k", ":cprev<CR>")
+vim.keymap.set("n", "<A-j>", ":cnext<CR>")
+vim.keymap.set("n", "<A-k>", ":cprev<CR>")
