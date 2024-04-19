@@ -7,6 +7,7 @@ vim.opt.breakindent = true
 vim.opt.expandtab = true
 
 vim.opt.autoread = true
+vim.opt.signcolumn = true
 
 vim.g.moonflyItalics = false
 vim.g.moonflyCursorColor = false
