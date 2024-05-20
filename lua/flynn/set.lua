@@ -1,3 +1,10 @@
+local home = vim.env.HOME
+if home == nil then
+	home = os.getenv("HOME")
+end
+
+vim.g.python3_host_prog = home .. '/.local/venv/nvim/bin/python'
+
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 0
 vim.opt.relativenumber = true
@@ -15,10 +22,6 @@ vim.g.moonflyCUndercurls = false
 vim.g.moonflyVirtualTextColor = true
 vim.cmd.colorscheme("moonfly")
 
-local home = vim.env.HOME
-if home == nil then
-	home = os.getenv("HOME")
-end
 vim.opt.undodir = home .. "/.vim/undo"
 vim.opt.undofile = true
 
