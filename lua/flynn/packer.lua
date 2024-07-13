@@ -50,7 +50,6 @@ return require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter-context'
   use {
     'j-hui/fidget.nvim',
-    tag = 'legacy',
     config = function()
       require("fidget").setup {
         -- options
@@ -71,9 +70,9 @@ return require('packer').startup(function(use)
     branch = 'master',
     requires = 'nvim-lua/plenary.nvim',
   }
-  use 'theHamsta/nvim-dap-virtual-text'
-  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
-  use_rocks 'luafilesystem'
+  -- use 'theHamsta/nvim-dap-virtual-text'
+  -- use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
+  -- use_rocks 'luafilesystem'
   -- use 'github/copilot.vim'
 
   -- }}}
@@ -104,7 +103,7 @@ return require('packer').startup(function(use)
   })
   -- }}}
 
-  use 'lervag/vimtex'
+  -- use 'lervag/vimtex'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
