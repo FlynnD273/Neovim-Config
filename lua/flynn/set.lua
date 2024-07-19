@@ -1,6 +1,6 @@
 local home = vim.env.HOME
 if home == nil then
-	home = os.getenv("HOME")
+  home = os.getenv("HOME")
 end
 
 vim.g.python3_host_prog = home .. '/.local/venv/nvim/bin/python'
@@ -48,7 +48,8 @@ vim.opt.scrolloff = 5
 
 local function before_save()
   -- Check if LSP is attached
-  local clients = vim.lsp.get_clients()
+  local buf = vim.api.nvim_get_current_buf()
+  local clients = vim.lsp.get_clients({ bufnr = buf })
   if #clients > 0 then
     Format_func()
   end
