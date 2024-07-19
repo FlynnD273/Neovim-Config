@@ -31,11 +31,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     if vim.bo.filetype == "python" then
-        vim.keymap.set("n", "<leader>rf", "<Cmd>call Black()<CR>")
-      else
-        vim.keymap.set('n', '<leader>rf', function()
-          vim.lsp.buf.format { async = true }
-        end, opts)
+      Format_func = function ()
+        vim.api.nvim_command('call Black()')
       end
+    else
+      Format_func = function ()
+        vim.lsp.buf.format { async = true }
+      end
+    end
+    vim.keymap.set('n', '<leader>rf', Format_func, opts)
   end,
 })

@@ -45,3 +45,16 @@ vim.opt.scrolloff = 5
 -- vim.cmd.hi("IndentGuidesEven guibg='#212121'")
 -- vim.g.python_highlight_all = 1
 -- vim.g.indent_guides_enable_on_vim_startup = 1
+
+local function before_save()
+  -- Check if LSP is attached
+  local clients = vim.lsp.get_clients()
+  if #clients > 0 then
+    Format_func()
+  end
+end
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*',
+  callback = before_save,
+})
