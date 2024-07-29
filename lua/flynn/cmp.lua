@@ -138,21 +138,21 @@ require('lspconfig').pyright.setup {
       }
     }
   }
-}                                                                       
-require('lspconfig').gdscript.setup { capabilities = capabilities }     
-require('lspconfig').html.setup { capabilities = capabilities }         
+}
+require('lspconfig').gdscript.setup { capabilities = capabilities }
+require('lspconfig').html.setup { capabilities = capabilities }
 require('lspconfig').rust_analyzer.setup { capabilities = capabilities }
-require('lspconfig').tsserver.setup { capabilities = capabilities }     
-require 'lspconfig'.ccls.setup { capabilities = capabilities }          
-require 'lspconfig'.texlab.setup { capabilities = capabilities }        
-require 'lspconfig'.bashls.setup { capabilities = capabilities }        
-require 'lspconfig'.sqlls.setup { capabilities = capabilities }         
+require('lspconfig').tsserver.setup { capabilities = capabilities }
+require 'lspconfig'.ccls.setup { capabilities = capabilities }
+require 'lspconfig'.texlab.setup { capabilities = capabilities }
+require 'lspconfig'.bashls.setup { capabilities = capabilities }
+require 'lspconfig'.sqlls.setup { capabilities = capabilities }
 -- require'lspconfig'.java_language_server.setup {
 -- 	capabilities = capabilities,
 -- 	cmd = { "bash", "/home/flynn/Documents/misc-git/java-language-server/dist/lang_server_linux.sh" },
 -- }
-require 'lspconfig'.cssls.setup { capabilities = capabilities }            
-require 'lspconfig'.jsonls.setup { capabilities = capabilities }           
+require 'lspconfig'.cssls.setup { capabilities = capabilities }
+require 'lspconfig'.jsonls.setup { capabilities = capabilities }
 require 'lspconfig'.racket_langserver.setup { capabilities = capabilities }
 
 
