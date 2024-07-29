@@ -117,7 +117,7 @@ require('lspconfig').lua_ls.setup { -- https://luals.github.io/#neovim-install
     },
   },
 }
-require('lspconfig').csharp_ls.setup { -- dotnet tool install --global csharp-ls
+require('lspconfig').csharp_ls.setup {
   capabilities = capabilities,
   root_dir = function(startpath)
     local lspconfig = require('lspconfig')
@@ -138,19 +138,41 @@ require('lspconfig').pyright.setup {
       }
     }
   }
-}                                                                        -- npm i -g pyright
-require('lspconfig').gdscript.setup { capabilities = capabilities }      -- comes with Godot
-require('lspconfig').html.setup { capabilities = capabilities }          -- npm i -g vscode-langservers-extracted
-require('lspconfig').rust_analyzer.setup { capabilities = capabilities } -- rustup component add rust-analyzer
-require('lspconfig').tsserver.setup { capabilities = capabilities }      -- npm i -g typescript-language-server typescript
-require 'lspconfig'.ccls.setup { capabilities = capabilities }           -- https://github.com/MaskRay/ccls/wiki OR sudo apt install ccls
-require 'lspconfig'.texlab.setup { capabilities = capabilities }         -- cargo install texlab
-require 'lspconfig'.bashls.setup { capabilities = capabilities }         -- npm i -g bash-language-server
-require 'lspconfig'.sqlls.setup { capabilities = capabilities }          -- npm i -g sql-language-server
--- require'lspconfig'.java_language_server.setup { -- https://github.com/georgewfraser/java-language-server
+}                                                                       
+require('lspconfig').gdscript.setup { capabilities = capabilities }     
+require('lspconfig').html.setup { capabilities = capabilities }         
+require('lspconfig').rust_analyzer.setup { capabilities = capabilities }
+require('lspconfig').tsserver.setup { capabilities = capabilities }     
+require 'lspconfig'.ccls.setup { capabilities = capabilities }          
+require 'lspconfig'.texlab.setup { capabilities = capabilities }        
+require 'lspconfig'.bashls.setup { capabilities = capabilities }        
+require 'lspconfig'.sqlls.setup { capabilities = capabilities }         
+-- require'lspconfig'.java_language_server.setup {
 -- 	capabilities = capabilities,
 -- 	cmd = { "bash", "/home/flynn/Documents/misc-git/java-language-server/dist/lang_server_linux.sh" },
 -- }
-require 'lspconfig'.cssls.setup { capabilities = capabilities }             -- npm i -g vscode-langservers-extracted
-require 'lspconfig'.jsonls.setup { capabilities = capabilities }            -- npm i -g vscode-langservers-extracted
-require 'lspconfig'.racket_langserver.setup { capabilities = capabilities } -- raco pkg install racket-langserver
+require 'lspconfig'.cssls.setup { capabilities = capabilities }            
+require 'lspconfig'.jsonls.setup { capabilities = capabilities }           
+require 'lspconfig'.racket_langserver.setup { capabilities = capabilities }
+
+
+
+
+
+--[[
+cargo install texlab
+comes with Godot
+sudo npm i -g bash-language-server
+sudo npm i -g csharp-ls
+sudo npm i -g pyright
+sudo npm i -g sql-language-server
+sudo npm i -g typescript-language-server typescript
+sudo npm i -g vscode-langservers-extracted
+sudo npm i -g vscode-langservers-extracted
+sudo npm i -g vscode-langservers-extracted
+raco pkg install racket-langserver
+rustup component add rust-analyzer
+sudo pacman -S ccls
+
+https://github.com/georgewfraser/java-language-server
+]]
