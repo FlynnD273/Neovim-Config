@@ -162,16 +162,16 @@ require 'lspconfig'.racket_langserver.setup { capabilities = capabilities }
 --[[
 cargo install texlab
 comes with Godot
+dotnet tool install --global csharp-ls
+raco pkg install racket-langserver
+rustup component add rust-analyzer
 sudo npm i -g bash-language-server
-sudo npm i -g csharp-ls
 sudo npm i -g pyright
 sudo npm i -g sql-language-server
 sudo npm i -g typescript-language-server typescript
 sudo npm i -g vscode-langservers-extracted
 sudo npm i -g vscode-langservers-extracted
 sudo npm i -g vscode-langservers-extracted
-raco pkg install racket-langserver
-rustup component add rust-analyzer
 sudo pacman -S ccls
 
 https://github.com/georgewfraser/java-language-server
