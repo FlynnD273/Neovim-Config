@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Application Name
+Comment=A short description of the application
+Exec=/full/path/to/application/executable
+Terminal=false
+Type=Application
+Icon=/full/path/to/icon-file
