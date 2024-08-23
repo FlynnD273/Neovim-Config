@@ -127,7 +127,9 @@ require('lspconfig').csharp_ls.setup { -- dotnet tool install --global csharp-ls
 	end,
 }
 require('lspconfig').pyright.setup { capabilities = capabilities } -- npm i -g pyright
-require('lspconfig').gdscript.setup { capabilities = capabilities } -- comes with Godot
+require('lspconfig').gdscript.setup { capabilities = capabilities,
+	root_dir = function() return vim.fs.dirname(vim.fs.find('project.godot', { upward = true })[1]) end,
+ } -- comes with Godot
 require('lspconfig').html.setup { capabilities = capabilities } -- npm i -g vscode-langservers-extracted
 require('lspconfig').rust_analyzer.setup { capabilities = capabilities } -- rustup component add rust-analyzer
 require('lspconfig').tsserver.setup { capabilities = capabilities } -- npm i -g typescript-language-server typescript
