@@ -33,7 +33,8 @@ function Compile_tex()
     dir = tex_file:match("(.*/)")
   end
 
-  local cmd = 'pdflatex -interaction=nonstopmode "' .. tex_file .. '"' .. ' -output-directory="' .. dir .. '"'
+  local cmd = 'pdflatex -interaction=nonstopmode -shell-escape "' ..
+  tex_file .. '"' .. ' -output-directory="' .. dir .. '"'
   local exit_code, stdout, stderr = Execute_command(cmd)
 
   if exit_code ~= 0 then
