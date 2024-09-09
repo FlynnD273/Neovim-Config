@@ -5,6 +5,9 @@ end
 
 vim.g.python3_host_prog = home .. '/.local/venv/nvim/bin/python'
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 0
 vim.opt.relativenumber = true
