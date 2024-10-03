@@ -1,5 +1,16 @@
+local home = vim.env.HOME
+if home == nil then
+  home = os.getenv("HOME")
+end
+local dir = ""
+if vim.loop.os_uname().sysname == "Windows_NT" then
+  dir = home .. "/Documents/Notes"
+else
+  dir = home .. "/Documents/Notes"
+end
+
 require("obsidian").setup({
-	dir = "/home/flynn/Documents/Notes",
+  dir = dir,
 
 	prepend_note_id = false,
 

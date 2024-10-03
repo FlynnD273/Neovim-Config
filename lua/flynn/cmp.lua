@@ -155,6 +155,15 @@ require 'lspconfig'.cssls.setup { capabilities = capabilities }
 require 'lspconfig'.jsonls.setup { capabilities = capabilities }
 require 'lspconfig'.racket_langserver.setup { capabilities = capabilities }
 
+if vim.loop.os_uname().sysname == "Windows_NT" then
+  local home = vim.env.HOME
+  if home == nil then
+    home = os.getenv("HOME")
+  end
+  require'lspconfig'.powershell_es.setup { -- https://github.com/PowerShell/PowerShellEditorServices/releases
+    bundle_path = home .. [[/PowerShellEditorServices]],
+  }
+end
 
 
 

@@ -3,7 +3,11 @@ if home == nil then
   home = os.getenv("HOME")
 end
 
-vim.g.python3_host_prog = home .. '/.local/venv/nvim/bin/python'
+if vim.loop.os_uname().sysname == "Windows_NT" then
+  vim.g.python3_host_prog = home .. '~/venv/nvim/bin/python'
+else
+  vim.g.python3_host_prog = home .. '~/.local/venv/nvim/bin/python'
+end
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
