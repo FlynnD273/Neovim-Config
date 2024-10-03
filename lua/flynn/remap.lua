@@ -26,4 +26,4 @@ vim.keymap.set({ "n", "v" }, "(", "")
 vim.keymap.set("n", "<A-j>", ":cnext<CR>")
 vim.keymap.set("n", "<A-k>", ":cprev<CR>")
 
-vim.keymap.set("n", "<Esc>", ":nohl<CR>")
+-- vim.keymap.set("n", "<Esc>", ":nohl<CR>")

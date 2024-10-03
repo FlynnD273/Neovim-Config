@@ -160,8 +160,8 @@ require 'lspconfig'.racket_langserver.setup { capabilities = capabilities }
 
 
 --[[
-cargo install texlab
 comes with Godot
+cargo install texlab
 dotnet tool install --global csharp-ls
 raco pkg install racket-langserver
 rustup component add rust-analyzer
@@ -173,6 +173,9 @@ sudo npm i -g vscode-langservers-extracted
 sudo npm i -g vscode-langservers-extracted
 sudo npm i -g vscode-langservers-extracted
 sudo pacman -S ccls
+
+python -m venv ~/.local/venv/nvim/
+~/.local/venv/nvim/bin/pip install black
 
 https://github.com/georgewfraser/java-language-server
 ]]
