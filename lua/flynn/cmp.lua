@@ -184,12 +184,12 @@ sudo npm i -g vscode-langservers-extracted
 sudo pacman -S ccls
 
 python -m venv ~/.local/venv/nvim/
-~/.local/venv/nvim/bin/pip install black
+~/.local/venv/nvim/bin/pip install pynvim black
 
 https://github.com/georgewfraser/java-language-server
 
 WINDOWS
 cd
 python -m venv ./venv/nvim/
-.\venv\nvim\Scripts\pip.exe install black
+.\venv\nvim\Scripts\pip.exe install pynvim black
 ]]
