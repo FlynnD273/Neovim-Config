@@ -187,4 +187,8 @@ python -m venv ~/.local/venv/nvim/
 ~/.local/venv/nvim/bin/pip install black
 
 https://github.com/georgewfraser/java-language-server
+
+WINDOWS
+python -m venv ~/venv/nvim/
+~/venv/nvim/bin/pip install black
 ]]
