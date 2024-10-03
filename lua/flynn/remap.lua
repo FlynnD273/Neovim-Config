@@ -1,9 +1,9 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -26,4 +26,4 @@ vim.keymap.set({ "n", "v" }, "(", "")
 vim.keymap.set("n", "<A-j>", ":cnext<CR>")
 vim.keymap.set("n", "<A-k>", ":cprev<CR>")
 
--- vim.keymap.set("n", "<Esc>", ":nohl<CR>")
+vim.keymap.set("n", "<Esc>", ":nohl<CR>")

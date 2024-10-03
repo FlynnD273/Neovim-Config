@@ -4,7 +4,7 @@ if home == nil then
 end
 
 if vim.loop.os_uname().sysname == "Windows_NT" then
-  vim.g.python3_host_prog = home .. '/venv/nvim/bin/python'
+  vim.g.python3_host_prog = home .. '/venv/nvim/Scripts/python.exe'
 else
   vim.g.python3_host_prog = home .. '/.local/venv/nvim/bin/python'
 end
