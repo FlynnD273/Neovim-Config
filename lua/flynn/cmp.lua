@@ -160,7 +160,7 @@ if vim.loop.os_uname().sysname == "Windows_NT" then
   if home == nil then
     home = os.getenv("HOME")
   end
-  require'lspconfig'.powershell_es.setup { -- https://github.com/PowerShell/PowerShellEditorServices/releases
+  require 'lspconfig'.powershell_es.setup { -- https://github.com/PowerShell/PowerShellEditorServices/releases
     bundle_path = home .. [[/PowerShellEditorServices]],
   }
 end
@@ -189,6 +189,7 @@ python -m venv ~/.local/venv/nvim/
 https://github.com/georgewfraser/java-language-server
 
 WINDOWS
-python -m venv ~/venv/nvim/
-~/venv/nvim/bin/pip install black
+cd
+python -m venv ./venv/nvim/
+./venv/nvim/bin/pip install black
 ]]
