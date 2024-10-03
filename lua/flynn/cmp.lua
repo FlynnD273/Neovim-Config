@@ -191,5 +191,5 @@ https://github.com/georgewfraser/java-language-server
 WINDOWS
 cd
 python -m venv ./venv/nvim/
-./venv/nvim/bin/pip install black
+.\venv\nvim\Scripts\pip.exe install black
 ]]
