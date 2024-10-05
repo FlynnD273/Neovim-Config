@@ -32,7 +32,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     if vim.bo.filetype == "python" then
       Format_func = function()
-        vim.api.nvim_command('call Black()')
+        vim.cmd([[python << EOF
+import black
+mode = black.FileMode()
+fast = False
+try:
+  vim.current.buffer[:] = black.format_file_contents("\n".join(vim.current.buffer[:]), fast= fast, mode= mode).split("\n")
+except black.parsing.InvalidInput as e:
+  print("Couldn't format file, invalid syntax\n")
+EOF]])
+        -- vim.api.nvim_command('call Black()')
       end
     else
       Format_func = function()

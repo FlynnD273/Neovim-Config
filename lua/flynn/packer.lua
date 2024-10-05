@@ -39,7 +39,6 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- Coding {{{
-  use 'averms/black-nvim'
   use 'mfussenegger/nvim-jdtls'
   use 'tpope/vim-commentary'
   use {
