@@ -154,6 +154,7 @@ require 'lspconfig'.sqlls.setup { capabilities = capabilities }
 require 'lspconfig'.cssls.setup { capabilities = capabilities }
 require 'lspconfig'.jsonls.setup { capabilities = capabilities }
 require 'lspconfig'.racket_langserver.setup { capabilities = capabilities }
+require 'lspconfig'.glslls.setup { capabilities = capabilities }
 
 if vim.loop.os_uname().sysname == "Windows_NT" then
   local home = vim.env.HOME
@@ -182,6 +183,7 @@ sudo npm i -g vscode-langservers-extracted
 sudo npm i -g vscode-langservers-extracted
 sudo npm i -g vscode-langservers-extracted
 sudo pacman -S ccls
+echo ;Install GLSLLS from https://github.com/svenstaro/glsl-language-server'
 
 python -m venv ~/.local/venv/nvim/
 ~/.local/venv/nvim/bin/pip install pynvim black
