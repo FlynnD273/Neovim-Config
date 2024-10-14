@@ -54,7 +54,6 @@ EOF]])
         local buf = vim.api.nvim_get_current_buf()
         local lines = table.concat(vim.api.nvim_buf_get_lines(buf, 0, -1, false), "\n")
         local cmd = vim.g.python3_host_prog .. ' -m gdtoolkit.formatter - --use-spaces 2'
-        cmd = cmd:gsub("\\", "/")
         local temp_file = vim.fn.tempname()
         local file = io.open(temp_file, "w")
         if not file then
