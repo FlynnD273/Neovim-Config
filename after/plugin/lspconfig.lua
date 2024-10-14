@@ -51,12 +51,24 @@ EOF]])
         vim.lsp.buf.format { async = true }
       end
       local gd_format = function()
-        vim.cmd("w")
-        local path = vim.fn.expand('%:p')
-        local cmd = vim.fn.fnamemodify(vim.g.python3_host_prog, ":h") .. [[/gdformat "]] .. path .. [["]]
+        local buf = vim.api.nvim_get_current_buf()
+        local lines = table.concat(vim.api.nvim_buf_get_lines(buf, 0, -1, false), "\n")
+        local cmd = vim.g.python3_host_prog .. ' -m gdtoolkit.formatter - --use-spaces 2'
         cmd = cmd:gsub("\\", "/")
-        vim.fn.system(cmd)
-        vim.cmd("e")
+        local temp_file = vim.fn.tempname()
+        local file = io.open(temp_file, "w")
+        if not file then
+          print("Failed to open temp file")
+          return
+        end
+        file:write(lines)
+        file:close()
+        local output = vim.fn.system(cmd .. ' < ' .. temp_file)
+        os.remove(temp_file)
+        if vim.v.shell_error == 0 then
+          local output_lines = vim.split(output, "\n")
+          vim.api.nvim_buf_set_lines(buf, 0, -1, false, output_lines)
+        end
       end
       vim.keymap.set('n', '<leader>rf', gd_format, opts)
     else
