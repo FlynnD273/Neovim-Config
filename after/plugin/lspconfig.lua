@@ -30,6 +30,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    Format_func = function() end
+    vim.keymap.set('n', '<leader>rf', Format_func, opts)
     if vim.bo.filetype == "python" then
       Format_func = function()
         vim.cmd([[python << EOF
@@ -43,13 +45,24 @@ except black.parsing.InvalidInput as e:
 except black.report.NothingChanged:
   pass
 EOF]])
-        -- vim.api.nvim_command('call Black()')
       end
+    elseif vim.bo.filetype == "gdscript" then
+      Format_func = function()
+        vim.lsp.buf.format { async = true }
+      end
+      local gd_format = function()
+        vim.cmd("w")
+        local path = vim.fn.expand('%:p')
+        local cmd = vim.fn.fnamemodify(vim.g.python3_host_prog, ":h") .. [[/gdformat "]] .. path .. [["]]
+        cmd = cmd:gsub("\\", "/")
+        vim.fn.system(cmd)
+        vim.cmd("e")
+      end
+      vim.keymap.set('n', '<leader>rf', gd_format, opts)
     else
       Format_func = function()
         vim.lsp.buf.format { async = true }
       end
     end
-    vim.keymap.set('n', '<leader>rf', Format_func, opts)
   end,
 })

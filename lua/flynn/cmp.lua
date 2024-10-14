@@ -186,12 +186,13 @@ sudo pacman -S ccls
 echo ;Install GLSLLS from https://github.com/svenstaro/glsl-language-server'
 
 python -m venv ~/.local/venv/nvim/
-~/.local/venv/nvim/bin/pip install pynvim black
+~/.local/venv/nvim/bin/pip install pynvim black gdtoolkit==4.*
 
 https://github.com/georgewfraser/java-language-server
 
 WINDOWS
 cd
 python -m venv ./venv/nvim/
-.\venv\nvim\Scripts\pip.exe install pynvim black
+~\venv\nvim\Scripts\pip.exe install pynvim black gdtoolkit==4.*
+
 ]]
