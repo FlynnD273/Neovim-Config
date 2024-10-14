@@ -37,9 +37,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.cmd([[python << EOF
 import black
 mode = black.FileMode()
-fast = False
 try:
-  vim.current.buffer[:] = black.format_file_contents("\n".join(vim.current.buffer[:]), fast= fast, mode= mode).split("\n")
+  vim.current.buffer[:] = black.format_file_contents("\n".join(vim.current.buffer[:]), fast= False, mode= mode).split("\n")
 except black.parsing.InvalidInput as e:
   print("Couldn't format file, invalid syntax\n")
 except black.report.NothingChanged:
@@ -48,28 +47,15 @@ EOF]])
       end
     elseif vim.bo.filetype == "gdscript" then
       Format_func = function()
-        vim.lsp.buf.format { async = true }
+        vim.cmd([[python << EOF
+from gdtoolkit.formatter.__main__ import _format_code
+success, actually_formatted, formatted_code = _format_code("\n".join(vim.current.buffer[:]), 88, 2, "STDIN", True)
+if success:
+  vim.current.buffer[:] = formatted_code.split("\n")
+else:
+  print("Couldn't format file, invalid syntax\n")
+EOF]])
       end
-      local gd_format = function()
-        local buf = vim.api.nvim_get_current_buf()
-        local lines = table.concat(vim.api.nvim_buf_get_lines(buf, 0, -1, false), "\n")
-        local cmd = vim.g.python3_host_prog .. ' -m gdtoolkit.formatter - --use-spaces 2'
-        local temp_file = vim.fn.tempname()
-        local file = io.open(temp_file, "w")
-        if not file then
-          print("Failed to open temp file")
-          return
-        end
-        file:write(lines)
-        file:close()
-        local output = vim.fn.system(cmd .. ' < ' .. temp_file)
-        os.remove(temp_file)
-        if vim.v.shell_error == 0 then
-          local output_lines = vim.split(output, "\n")
-          vim.api.nvim_buf_set_lines(buf, 0, -1, false, output_lines)
-        end
-      end
-      vim.keymap.set('n', '<leader>rf', gd_format, opts)
     else
       Format_func = function()
         vim.lsp.buf.format { async = true }
