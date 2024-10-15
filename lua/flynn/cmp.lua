@@ -156,7 +156,7 @@ require 'lspconfig'.jsonls.setup { capabilities = capabilities }
 require 'lspconfig'.racket_langserver.setup { capabilities = capabilities }
 require 'lspconfig'.glslls.setup { capabilities = capabilities }
 
-if vim.loop.os_uname().sysname == "Windows_NT" then
+if vim.is_windows then
   local home = vim.env.HOME
   if home == nil then
     home = os.getenv("HOME")
