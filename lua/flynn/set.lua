@@ -2,6 +2,7 @@ local home = vim.env.HOME
 if home == nil then
   home = os.getenv("HOME")
 end
+vim.env.HOME = home
 
 if vim.is_windows then
   vim.g.python3_host_prog = home .. '/venv/nvim/Scripts/python.exe'
