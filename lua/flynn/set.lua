@@ -2,8 +2,9 @@ local home = vim.env.HOME
 if home == nil then
   home = os.getenv("HOME")
 end
+vim.env.HOME = home
 
-if vim.loop.os_uname().sysname == "Windows_NT" then
+if vim.is_windows then
   vim.g.python3_host_prog = home .. '/venv/nvim/Scripts/python.exe'
   vim.o.shell = 'C:\\Windows\\System32\\cmd.exe'
   vim.o.shellcmdflag = '/c'
