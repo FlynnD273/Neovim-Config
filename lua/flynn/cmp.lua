@@ -180,8 +180,6 @@ sudo npm i -g pyright
 sudo npm i -g sql-language-server
 sudo npm i -g typescript-language-server typescript
 sudo npm i -g vscode-langservers-extracted
-sudo npm i -g vscode-langservers-extracted
-sudo npm i -g vscode-langservers-extracted
 sudo pacman -S ccls
 echo ;Install GLSLLS from https://github.com/svenstaro/glsl-language-server'
 

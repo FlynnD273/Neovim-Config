@@ -92,7 +92,7 @@ return require('packer').startup(function(use)
   use { 'epwalsh/obsidian.nvim', branch = 'main', }
   use { 'folke/trouble.nvim' }
   use 'nvim-tree/nvim-web-devicons'
-  use 'smjonas/live-command.nvim'
+  -- use 'smjonas/live-command.nvim'
   use({
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
