@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- Coding {{{
+  use 'elkowar/yuck.vim'
   use 'mfussenegger/nvim-jdtls'
   use 'tpope/vim-commentary'
   use {
