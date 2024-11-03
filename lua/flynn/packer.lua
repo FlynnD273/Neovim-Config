@@ -40,6 +40,7 @@ return require('packer').startup(function(use)
 
   -- Coding {{{
   use 'elkowar/yuck.vim'
+  use 'goerz/jupytext.vim'
   use 'mfussenegger/nvim-jdtls'
   use 'tpope/vim-commentary'
   use {
