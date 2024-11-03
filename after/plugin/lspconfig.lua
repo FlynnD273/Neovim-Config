@@ -54,7 +54,8 @@ success, actually_formatted, formatted_code = _format_code("\n".join(vim.current
 if success:
   vim.current.buffer[:] = formatted_code.split("\n")
 else:
-  print("Couldn't format file, invalid syntax\n")
+  pass
+  # print("Couldn't format file, invalid syntax\n")
 EOF]])
       end
     else
