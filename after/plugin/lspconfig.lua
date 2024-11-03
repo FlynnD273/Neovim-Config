@@ -40,7 +40,8 @@ mode = black.FileMode()
 try:
   vim.current.buffer[:] = black.format_file_contents("\n".join(vim.current.buffer[:]), fast= False, mode= mode).split("\n")
 except black.parsing.InvalidInput as e:
-  print("Couldn't format file, invalid syntax\n")
+  pass
+  # print("Couldn't format file, invalid syntax\n")
 except black.report.NothingChanged:
   pass
 EOF]])
