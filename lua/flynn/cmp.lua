@@ -97,73 +97,115 @@ cmp.setup.cmdline(':', {
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('lspconfig').lua_ls.setup { -- https://luals.github.io/#neovim-install
-  capabilities = capabilities,
-  cmd = { "lua-language-server" },
-  settings = {
-    Lua = {
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = { 'vim', 'require', 'use_rocks' },
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      telemetry = {
-        -- Do not send telemetry data containing a randomized but unique identifier
-        enable = false,
-      },
-    },
-  },
-}
-require('lspconfig').csharp_ls.setup {
-  capabilities = capabilities,
-  root_dir = function(startpath)
-    local lspconfig = require('lspconfig')
-    return lspconfig.util.root_pattern("*.sln")(startpath)
-        or lspconfig.util.root_pattern("*.csproj")(startpath)
-        or lspconfig.util.root_pattern("*.fsproj")(startpath)
-        or lspconfig.util.root_pattern(".git")(startpath)
-  end,
-}
-require('lspconfig').pyright.setup {
-  capabilities = capabilities,
-  settings = {
-    python = {
-      analysis = {
-        autoSearchPaths = true,
-        diagnosticMode = "workspace",
-        useLibraryCodeForTypes = true
-      }
-    }
-  }
-}
-require('lspconfig').gdscript.setup { capabilities = capabilities }
-require('lspconfig').html.setup { capabilities = capabilities }
-require('lspconfig').rust_analyzer.setup { capabilities = capabilities }
-require('lspconfig').ts_ls.setup { capabilities = capabilities }
-require 'lspconfig'.ccls.setup { capabilities = capabilities }
-require 'lspconfig'.texlab.setup { capabilities = capabilities }
-require 'lspconfig'.bashls.setup { capabilities = capabilities }
-require 'lspconfig'.sqlls.setup { capabilities = capabilities }
+-- require('lspconfig').lua_ls.setup { -- https://luals.github.io/#neovim-install
+--   capabilities = capabilities,
+--   cmd = { "lua-language-server" },
+--   settings = {
+--     Lua = {
+--       diagnostics = {
+--         -- Get the language server to recognize the `vim` global
+--         globals = { 'vim', 'require', 'use_rocks' },
+--       },
+--       workspace = {
+--         -- Make the server aware of Neovim runtime files
+--         library = vim.api.nvim_get_runtime_file("", true),
+--       },
+--       telemetry = {
+--         -- Do not send telemetry data containing a randomized but unique identifier
+--         enable = false,
+--       },
+--     },
+--   },
+-- }
+-- require('lspconfig').csharp_ls.setup {
+--   capabilities = capabilities,
+--   root_dir = function(startpath)
+--     local lspconfig = require('lspconfig')
+--     return lspconfig.util.root_pattern("*.sln")(startpath)
+--         or lspconfig.util.root_pattern("*.csproj")(startpath)
+--         or lspconfig.util.root_pattern("*.fsproj")(startpath)
+--         or lspconfig.util.root_pattern(".git")(startpath)
+--   end,
+-- }
+-- require 'lspconfig'.omnisharp.setup {
+--   cmd = { "/usr/bin/omnisharp" },
+
+--   settings = {
+--     FormattingOptions = {
+--       -- Enables support for reading code style, naming convention and analyzer
+--       -- settings from .editorconfig.
+--       EnableEditorConfigSupport = true,
+--       -- Specifies whether 'using' directives should be grouped and sorted during
+--       -- document formatting.
+--       OrganizeImports = nil,
+--     },
+--     MsBuild = {
+--       -- If true, MSBuild project system will only load projects for files that
+--       -- were opened in the editor. This setting is useful for big C# codebases
+--       -- and allows for faster initialization of code navigation features only
+--       -- for projects that are relevant to code that is being edited. With this
+--       -- setting enabled OmniSharp may load fewer projects and may thus display
+--       -- incomplete reference lists for symbols.
+--       LoadProjectsOnDemand = nil,
+--     },
+--     RoslynExtensionsOptions = {
+--       -- Enables support for roslyn analyzers, code fixes and rulesets.
+--       EnableAnalyzersSupport = nil,
+--       -- Enables support for showing unimported types and unimported extension
+--       -- methods in completion lists. When committed, the appropriate using
+--       -- directive will be added at the top of the current file. This option can
+--       -- have a negative impact on initial completion responsiveness,
+--       -- particularly for the first few completion sessions after opening a
+--       -- solution.
+--       EnableImportCompletion = nil,
+--       -- Only run analyzers against open files when 'enableRoslynAnalyzers' is
+--       -- true
+--       AnalyzeOpenDocumentsOnly = nil,
+--     },
+--     Sdk = {
+--       -- Specifies whether to include preview versions of the .NET SDK when
+--       -- determining which version to use for project loading.
+--       IncludePrereleases = true,
+--     },
+--   },
+-- }
+-- require('lspconfig').pyright.setup {
+--   capabilities = capabilities,
+--   settings = {
+--     python = {
+--       analysis = {
+--         autoSearchPaths = true,
+--         diagnosticMode = "workspace",
+--         useLibraryCodeForTypes = true
+--       }
+--     }
+--   }
+-- }
+-- require('lspconfig').gdscript.setup { capabilities = capabilities }
+-- require('lspconfig').html.setup { capabilities = capabilities }
+-- require('lspconfig').rust_analyzer.setup { capabilities = capabilities }
+-- require('lspconfig').ts_ls.setup { capabilities = capabilities }
+-- require 'lspconfig'.ccls.setup { capabilities = capabilities }
+-- require 'lspconfig'.texlab.setup { capabilities = capabilities }
+-- require 'lspconfig'.bashls.setup { capabilities = capabilities }
+-- require 'lspconfig'.sqlls.setup { capabilities = capabilities }
 -- require'lspconfig'.java_language_server.setup {
 -- 	capabilities = capabilities,
 -- 	cmd = { "bash", "/home/flynn/Documents/misc-git/java-language-server/dist/lang_server_linux.sh" },
 -- }
-require 'lspconfig'.cssls.setup { capabilities = capabilities }
-require 'lspconfig'.jsonls.setup { capabilities = capabilities }
-require 'lspconfig'.racket_langserver.setup { capabilities = capabilities }
-require 'lspconfig'.glslls.setup { capabilities = capabilities }
+-- require 'lspconfig'.cssls.setup { capabilities = capabilities }
+-- require 'lspconfig'.jsonls.setup { capabilities = capabilities }
+-- require 'lspconfig'.racket_langserver.setup { capabilities = capabilities }
+-- require 'lspconfig'.glslls.setup { capabilities = capabilities }
 
 if vim.is_windows then
   local home = vim.env.HOME
   if home == nil then
     home = os.getenv("HOME")
   end
-  require 'lspconfig'.powershell_es.setup { -- https://github.com/PowerShell/PowerShellEditorServices/releases
-    bundle_path = home .. [[/PowerShellEditorServices]],
-  }
+  -- require 'lspconfig'.powershell_es.setup { -- https://github.com/PowerShell/PowerShellEditorServices/releases
+  --   bundle_path = home .. [[/PowerShellEditorServices]],
+  -- }
 end
 
 

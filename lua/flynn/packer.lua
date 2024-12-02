@@ -62,7 +62,11 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'saadparwaiz1/cmp_luasnip'
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
-  use 'neovim/nvim-lspconfig'
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
   use 'hrsh7th/nvim-cmp'
   use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" }
   use {
