@@ -117,7 +117,7 @@ require('lspconfig').lua_ls.setup { -- https://luals.github.io/#neovim-install
     },
   },
 }
-require('lspconfig').csharp_ls.setup {
+require 'lspconfig'.csharp_ls.setup {
   capabilities = capabilities,
   root_dir = function(startpath)
     local lspconfig = require('lspconfig')
@@ -127,7 +127,7 @@ require('lspconfig').csharp_ls.setup {
         or lspconfig.util.root_pattern(".git")(startpath)
   end,
 }
-require('lspconfig').pyright.setup {
+require 'lspconfig'.pyright.setup {
   capabilities = capabilities,
   settings = {
     python = {
@@ -139,10 +139,10 @@ require('lspconfig').pyright.setup {
     }
   }
 }
-require('lspconfig').gdscript.setup { capabilities = capabilities }
-require('lspconfig').html.setup { capabilities = capabilities }
-require('lspconfig').rust_analyzer.setup { capabilities = capabilities }
-require('lspconfig').ts_ls.setup { capabilities = capabilities }
+require 'lspconfig'.gdscript.setup { capabilities = capabilities }
+require 'lspconfig'.html.setup { capabilities = capabilities }
+require 'lspconfig'.rust_analyzer.setup { capabilities = capabilities }
+require 'lspconfig'.ts_ls.setup { capabilities = capabilities }
 require 'lspconfig'.ccls.setup { capabilities = capabilities }
 require 'lspconfig'.texlab.setup { capabilities = capabilities }
 require 'lspconfig'.bashls.setup { capabilities = capabilities }
