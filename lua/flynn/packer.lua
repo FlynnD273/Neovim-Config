@@ -67,6 +67,7 @@ return require('packer').startup(function(use)
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
   }
+  use 'Hoffs/omnisharp-extended-lsp.nvim'
   use 'hrsh7th/nvim-cmp'
   use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" }
   use {
