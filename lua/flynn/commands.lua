@@ -33,13 +33,17 @@ function Compile_tex()
     dir = tex_file:match("(.*/)")
   end
 
+  local on_exit = function(obj)
+    if obj.code ~= 0 then
+      vim.schedule(function()
+        vim.notify(obj.stdout)
+      end)
+    end
+  end
   local cmd = 'xelatex -interaction=nonstopmode -shell-escape "' ..
   tex_file .. '"' .. ' -output-directory="' .. dir .. '"'
-  local exit_code, stdout, stderr = Execute_command(cmd)
+  vim.system({'xelatex', '-interaction=nonstopmode', '-shell-escape', tex_file, '-output-directory="'..dir..'"'}, on_exit)
 
-  if exit_code ~= 0 then
-    print(stdout)
-  end
 end
 
 -- Set up an autocommand to trigger the compile_tex function on BufWritePost for .tex files
