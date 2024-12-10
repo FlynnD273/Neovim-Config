@@ -60,7 +60,7 @@ EOF]])
       end
     else
       Format_func = function()
-        vim.lsp.buf.format { async = true }
+        vim.lsp.buf.format { async = false }
       end
     end
   end,

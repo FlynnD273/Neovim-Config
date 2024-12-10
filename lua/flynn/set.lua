@@ -6,8 +6,9 @@ vim.env.HOME = home
 
 if vim.is_windows then
   vim.g.python3_host_prog = home .. '/venv/nvim/Scripts/python.exe'
-  vim.o.shell = 'C:\\Windows\\System32\\cmd.exe'
-  vim.o.shellcmdflag = '/c'
+  vim.opt.shell = 'pwsh'
+  vim.opt.shellcmdflag = '-Command'
+  vim.g.undotree_DiffCommand = "pwsh -Command Compare-Object"
 else
   vim.g.python3_host_prog = home .. '/.local/venv/nvim/bin/python'
 end
