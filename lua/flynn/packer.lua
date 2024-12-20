@@ -16,6 +16,8 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  use 'RaafatTurki/hex.nvim'
+
   -- UI {{{
   use { 'FlynnD273/vim-moonfly-colors', as = 'moonfly', }
   use 'lukas-reineke/indent-blankline.nvim'
@@ -108,7 +110,6 @@ return require('packer').startup(function(use)
   })
   -- }}}
 
-  -- use 'lervag/vimtex'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
