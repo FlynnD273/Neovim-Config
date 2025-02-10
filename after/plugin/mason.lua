@@ -2,13 +2,15 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
+lspconfig["gdscript"].setup { capabilities = capabilities }
 require("mason-lspconfig").setup_handlers {
   function(server_name)
     lspconfig[server_name].setup { capabilities = capabilities, }
   end,
   ["omnisharp"] = function()
     local path = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
-    local root_file = vim.fs.find({"*.sln", "*.csproj", "*.fsproj", ".git"}, { type = "file", path = path, upward = true })[1]
+    local root_file = vim.fs.find({ "*.sln", "*.csproj", "*.fsproj", ".git" },
+      { type = "file", path = path, upward = true })[1]
     path = vim.fs.dirname(root_file)
     lspconfig.omnisharp.setup {
       handlers = { ["textDocument/definition"] = require('omnisharp_extended').definition_handler,
