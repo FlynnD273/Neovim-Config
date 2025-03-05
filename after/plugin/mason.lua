@@ -7,6 +7,11 @@ require("mason-lspconfig").setup_handlers {
   function(server_name)
     lspconfig[server_name].setup { capabilities = capabilities, }
   end,
+  ["clangd"] = function()
+    lspconfig.clangd.setup {
+      capabilities = capabilities,
+    }
+  end,
   ["omnisharp"] = function()
     local path = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
     local root_file = vim.fs.find({ "*.sln", "*.csproj", "*.fsproj", ".git" },
