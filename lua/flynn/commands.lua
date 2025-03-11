@@ -40,10 +40,8 @@ function Compile_tex()
       end)
     end
   end
-  local cmd = 'xelatex -interaction=nonstopmode -shell-escape "' ..
-  tex_file .. '"' .. ' -output-directory="' .. dir .. '"'
-  vim.system({'xelatex', '-interaction=nonstopmode', '-shell-escape', tex_file, '-output-directory="'..dir..'"'}, on_exit)
-
+  vim.system({ 'xelatex', '-interaction=nonstopmode', '-shell-escape', tex_file, '-output-directory="' .. dir .. '"' },
+    on_exit)
 end
 
 -- Set up an autocommand to trigger the compile_tex function on BufWritePost for .tex files
