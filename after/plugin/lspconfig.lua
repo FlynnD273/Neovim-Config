@@ -48,15 +48,15 @@ EOF]])
       end
     elseif vim.bo.filetype == "gdscript" then
       Format_func = function()
-        vim.cmd([[python << EOF
-from gdtoolkit.formatter.__main__ import _format_code
-success, actually_formatted, formatted_code = _format_code("\n".join(vim.current.buffer[:]), 88, 2, "STDIN", True)
-if success:
-  vim.current.buffer[:] = formatted_code.split("\n")
-else:
-  pass
-  # print("Couldn't format file, invalid syntax\n")
-EOF]])
+        -- vim.cmd([[python << EOF
+        -- from gdtoolkit.formatter.__main__ import _format_code
+        -- success, actually_formatted, formatted_code = _format_code("\n".join(vim.current.buffer[:]), 88, 2, "STDIN", True)
+        -- if success:
+        -- vim.current.buffer[:] = formatted_code.split("\n")
+        -- else:
+        -- pass
+        -- # print("Couldn't format file, invalid syntax\n")
+        -- EOF]])
       end
     else
       Format_func = function()

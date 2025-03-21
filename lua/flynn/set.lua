@@ -22,7 +22,7 @@ vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 
 vim.opt.autoread = true
 vim.opt.signcolumn = "yes"
