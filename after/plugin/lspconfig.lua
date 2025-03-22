@@ -32,8 +32,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     Format_func = function() end
     local local_format = function() end
-    vim.keymap.set('n', '<leader>rf',
-      Format_func, opts)
+    vim.keymap.set('n', '<leader>rf', local_format, opts)
     if vim.bo.filetype == "python" then
       local_format = function()
         vim.cmd([[python << EOF
