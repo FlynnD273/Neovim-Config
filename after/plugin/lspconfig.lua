@@ -31,9 +31,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     Format_func = function() end
-    vim.keymap.set('n', '<leader>rf', Format_func, opts)
+    local local_format = function() end
+    vim.keymap.set('n', '<leader>rf',
+      Format_func, opts)
     if vim.bo.filetype == "python" then
-      Format_func = function()
+      local_format = function()
         vim.cmd([[python << EOF
 import black
 mode = black.FileMode()
@@ -47,7 +49,7 @@ except black.report.NothingChanged:
 EOF]])
       end
     elseif vim.bo.filetype == "gdscript" then
-      Format_func = function()
+      local_format = function()
         vim.cmd([[python << EOF
 from gdtoolkit.formatter.__main__ import _format_code
 success, actually_formatted, formatted_code = _format_code("\n".join(vim.current.buffer[:]), 88, 2, "STDIN", True)
@@ -59,8 +61,13 @@ else:
 EOF]])
       end
     else
-      Format_func = function()
+      local_format = function()
         vim.lsp.buf.format { async = false }
+      end
+    end
+    Format_func = function()
+      if (Autoformat) then
+        local_format()
       end
     end
   end,
