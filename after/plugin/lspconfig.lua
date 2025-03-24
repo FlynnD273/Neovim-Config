@@ -64,7 +64,7 @@ EOF]])
       end
     end
     Format_func = function()
-      if (Autoformat == nil or Autoformat) then
+      if (vim.g.autoformat == nil or vim.g.autoformat) then
         local_format()
       end
     end

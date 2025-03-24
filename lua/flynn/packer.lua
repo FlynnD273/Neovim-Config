@@ -86,7 +86,7 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- Convenience {{{
-  use 'jenterkin/vim-autosource'
+  use 'FlynnD273/vim-autosource'
   use 'ThePrimeagen/harpoon'
   use 'mbbill/undotree'
   use 'tpope/vim-fugitive'
