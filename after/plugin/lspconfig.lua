@@ -51,9 +51,9 @@ EOF]])
 				vim.cmd([[python << EOF
 from gdtoolkit.formatter.__main__ import _format_code
 import re
-success, actually_formatted, formatted_code = _format_code("\n".join(vim.current.buffer[:]), 88, 2, "STDIN", True)
+success, actually_formatted, formatted_code = _format_code("\n".join(vim.current.buffer[:]), 88, 4, "STDIN", True)
 if success:
-  vim.current.buffer[:] = re.sub(r'^( {2})+', lambda m: '\t' * (len(m.group(0)) // 2), formatted_code, flags=re.MULTILINE).split("\n")
+  vim.current.buffer[:] = re.sub(r'^( {4})+', lambda m: '\t' * (len(m.group(0)) // 4), formatted_code, flags=re.MULTILINE).split("\n")
 else:
   pass
   # print("Couldn't format file, invalid syntax\n")
