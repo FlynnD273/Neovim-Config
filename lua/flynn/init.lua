@@ -1,5 +1,5 @@
-require("flynn.packer")
-require("flynn.set")
 require("flynn.remap")
+require("flynn.lazy")
+require("flynn.set")
 require("flynn.cmp")
 require("flynn.commands")
