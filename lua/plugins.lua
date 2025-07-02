@@ -76,27 +76,27 @@ return {
 	},
 	{
 		"j-hui/fidget.nvim",
-		lazy = true,
+		lazy = false,
 	},
 	{
 		"hrsh7th/cmp-nvim-lsp",
-		lazy = true,
+		lazy = false,
 	},
 	{
 		"hrsh7th/cmp-buffer",
-		lazy = true,
+		lazy = false,
 	},
 	{
 		"hrsh7th/cmp-path",
-		lazy = true,
+		lazy = false,
 	},
 	{
 		"hrsh7th/cmp-cmdline",
-		lazy = true,
+		lazy = false,
 	},
 	{
 		"saadparwaiz1/cmp_luasnip",
-		lazy = true,
+		lazy = false,
 	},
 	{
 		"hrsh7th/cmp-nvim-lsp-signature-help",
