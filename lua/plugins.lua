@@ -72,7 +72,7 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
-		lazy = true,
+		lazy = false,
 	},
 	{
 		"j-hui/fidget.nvim",
@@ -100,7 +100,7 @@ return {
 	},
 	{
 		"hrsh7th/cmp-nvim-lsp-signature-help",
-		lazy = true,
+		lazy = false,
 	},
 	{
 		"mason-org/mason-lspconfig.nvim",
