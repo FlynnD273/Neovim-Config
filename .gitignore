@@ -41,3 +41,4 @@ packer_compiled.lua
 *.x86_64
 *.hex
 
+lazy-lock.json
