@@ -115,7 +115,7 @@ return {
 			"neovim/nvim-lspconfig",
 		},
 
-		lazy = true,
+		lazy = false,
 	},
 	{
 		"Hoffs/omnisharp-extended-lsp.nvim",
