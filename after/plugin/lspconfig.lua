@@ -48,16 +48,15 @@ EOF]])
 			end
 		elseif vim.bo.filetype == "gdscript" then
 			local_format = function()
-				vim.cmd([[python << EOF
-from gdtoolkit.formatter.__main__ import _format_code
-import re
-success, actually_formatted, formatted_code = _format_code("\n".join(vim.current.buffer[:]), 100, 4, "STDIN", True)
-if success:
-  vim.current.buffer[:] = re.sub(r'^( {4})+', lambda m: '\t' * (len(m.group(0)) // 4), formatted_code, flags=re.MULTILINE).split("\n")
-else:
-  pass
-  # print("Couldn't format file, invalid syntax\n")
-EOF]])
+				local output = vim.system({ 'gdscript-formatter', '--reorder-code' },
+					{ stdin = vim.api.nvim_buf_get_lines(0, 0, -1, false) }):wait()
+				if output.code == 0 then
+					local buf = {}
+					for s in string.gmatch(output.stdout, "(.-)\n") do
+						buf[#buf + 1] = s
+					end
+					vim.api.nvim_buf_set_lines(0, 0, -1, false, buf)
+				end
 			end
 		else
 			local_format = function()
