@@ -1,21 +1,23 @@
 local home = vim.env.HOME
 if home == nil then
-  home = os.getenv("HOME")
+	home = os.getenv("HOME")
 end
 vim.env.HOME = home
 
 if vim.is_windows then
-  vim.g.python3_host_prog = home .. '/venv/nvim/Scripts/python.exe'
-  vim.opt.shell = 'pwsh'
-  vim.opt.shellcmdflag = '-Command'
-  vim.g.undotree_DiffCommand = "pwsh -Command Compare-Object"
+	vim.g.python3_host_prog = home .. '/venv/nvim/Scripts/python.exe'
+	vim.opt.shell = 'pwsh'
+	vim.opt.shellcmdflag = '-Command'
+	vim.g.undotree_DiffCommand = "pwsh -Command Compare-Object"
 else
-  vim.g.python3_host_prog = home .. '/.local/venv/nvim/bin/python'
+	vim.g.python3_host_prog = home .. '/.local/venv/nvim/bin/python'
 end
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+vim.opt.eol = false
+vim.opt.fixeol = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 0
 vim.opt.relativenumber = true
@@ -59,15 +61,15 @@ vim.opt.scrolloff = 5
 -- vim.g.indent_guides_enable_on_vim_startup = 1
 
 local function before_save()
-  -- Check if LSP is attached
-  local buf = vim.api.nvim_get_current_buf()
-  local clients = vim.lsp.get_clients({ bufnr = buf })
-  if #clients > 0 then
-    Format_func()
-  end
+	-- Check if LSP is attached
+	local buf = vim.api.nvim_get_current_buf()
+	local clients = vim.lsp.get_clients({ bufnr = buf })
+	if #clients > 0 then
+		Format_func()
+	end
 end
 
 vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = '*',
-  callback = before_save,
+	pattern = '*',
+	callback = before_save,
 })
