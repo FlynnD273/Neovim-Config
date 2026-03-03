@@ -98,6 +98,11 @@ cmp.setup.cmdline(':', {
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+-- require('lspconfig').clangd.setup {
+-- 	capabilities = capabilities,
+-- 	filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "arduino" },
+-- }
+
 -- require('lspconfig').lua_ls.setup { -- https://luals.github.io/#neovim-install
 --   capabilities = capabilities,
 --   cmd = { "lua-language-server" },
