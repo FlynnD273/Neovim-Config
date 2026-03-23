@@ -129,7 +129,7 @@ return {
 		"L3MON4D3/LuaSnip",
 		build = "make install_jsregexp",
 
-		lazy = true,
+		lazy = false,
 	},
 	{
 		"filipdutescu/renamer.nvim",

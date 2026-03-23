@@ -1,11 +1,11 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lspconfig = require('lspconfig')
-vim.lsp.enable('nushell')
-lspconfig.gdscript.setup { capabilities = capabilities }
+-- local lspconfig = require('lspconfig')
+-- vim.lsp.enable('nushell')
+vim.lsp.config.gdscript.capabilities = capabilities 
 -- raco pkg install racket-langserver
-lspconfig.racket_langserver.setup { capabilities = capabilities }
+vim.lsp.config.racket_langserver.capabilities =capabilities
 -- lspconfig.lua_ls.setup {
 -- 	on_init = function(client)
 -- 		if client.workspace_folders then
